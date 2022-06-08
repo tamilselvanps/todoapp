@@ -11,7 +11,7 @@ export default class Todo extends React.Component{
         console.log(this.props)
         return(
             <>
-                <div key={this.props.index} id={this.props.index}><span>{this.props.id+1}. {this.props.task}</span><span  onClick={()=>this.handleRemoveItem(this.props.index)} className={styles.todoItem}>Remove</span></div>
+                <div className="todo-item" key={this.props.index} id={this.props.index}><span>{this.props.id+1}. {this.props.task}</span><span  onClick={()=>this.handleRemoveItem(this.props.index)} className={styles.todoItem}>Remove</span></div>
             </>
         )
     }

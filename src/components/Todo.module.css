@@ -4,3 +4,6 @@
     font-weight: 900;
     cursor: pointer;
 }
+.todo-item{
+    padding : 10px 0px;
+}
