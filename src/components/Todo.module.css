@@ -1,0 +1,6 @@
+.todoItem{
+    padding-left: 10px;
+    color: red;
+    font-weight: 900;
+    cursor: pointer;
+}
