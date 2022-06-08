@@ -1,31 +1,23 @@
 import './App.css';
 import React from 'react'
 
-import CreateTodo from './components/CreateTodo'
-import Todos from './components/Todos'
+import TodoClassState from './pages/TodoClassState';
+import TodoWithRedux from './pages/TodoWithRedux';
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 
 export default class App extends React.Component {
-
-  state = {
-    todos : []
-  }
-
-  onAddItem =(todoObj)=>{
-    this.setState({todos:[...this.state.todos,todoObj]})
-  }
-
-  onRemoveItem =(index)=>{
-    const currItems = this.state.todos.filter((toDo)=>{
-        return index !== toDo.id
-    })
-    this.setState({todos:currItems})
-  }
 
   render(){
     return (
       <div className="App">
-        <CreateTodo onTodoSubmit={this.onAddItem} todos={this.state.todos}/>
-        <Todos tasksList={this.state.todos} onRemoveItem={this.onRemoveItem}/>
+        <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<TodoClassState />} />
+            <Route path="/redux" element={<TodoWithRedux />} />
+        </Routes>
+      </BrowserRouter>
       </div>
     )
   }

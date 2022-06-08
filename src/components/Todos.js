@@ -13,9 +13,10 @@ export default class Todos extends React.Component{
                 <>
                     <div className={styles.todoWrapper}>Your Todos</div>
                     <div>
-                    {todosList.map((toDo) => (
+                    {todosList.map((toDo,index) => (
                         <Todo
                             index={toDo.id}
+                            id={index}
                             task={toDo.task}
                             isCompleted={toDo.isCompleted}
                             onRemove={this.props.onRemoveItem}
